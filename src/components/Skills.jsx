@@ -55,7 +55,7 @@ function Skills() {
 
       {/* Professional Skills */}
       <div className="rounded-2xl border border-[#E69A00]/20 bg-[#300000] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E69A00]/60">
-        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E69A00]/10 text-2xl">
+        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E69A00]/10 text-2xl text-white">
           ✦
         </div>
 
