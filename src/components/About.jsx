@@ -6,7 +6,7 @@ function About() {
       <div className="container-main flex min-h-screen items-center">
         <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-center">
             <div className="relative">
               {/* Decorative background */}
               <div className="absolute -inset-4 rounded-full bg-[#800000]/30 blur-2xl"></div>
@@ -14,7 +14,7 @@ function About() {
               <img
                 src={Dimpgrad}
                 alt="About me"
-                className="relative w-[280px] sm:w-[350px] lg:w-[420px] rounded-2xl"
+                className="relative w-[250px] sm:w-[320px] lg:w-[330px] rounded-2xl"
               />
             </div>
           </div>
@@ -23,11 +23,8 @@ function About() {
           <div className="flex flex-col gap-6">
             {/* Section Label */}
             <div>
-              <p className="text-lg font-semibold tracking-widest text-[#E69A00]">
-                ABOUT ME
-              </p>
 
-              <div className="mt-2 h-[3px] w-16 rounded-full bg-[#E69A00]"></div>
+
             </div>
 
             {/* Heading */}
