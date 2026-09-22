@@ -1,7 +1,11 @@
+import useScrollReveal from "../hooks/useScrollReveal";
+
 function Footer() {
+  const footerRef = useScrollReveal({ threshold: 0.2 });
+
   return (
     <footer className="border-t border-[#E69A00]/20 bg-[#240000]">
-      <div className="container-main px-6 py-10">
+      <div ref={footerRef} className="scroll-reveal container-main px-6 py-10">
 
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
 
@@ -14,28 +18,28 @@ function Footer() {
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
             <a
               href="#hero"
-              className="transition-colors hover:text-[#E69A00]"
+              className="nav-link-hover transition-colors hover:text-[#E69A00]"
             >
               Home
             </a>
 
             <a
               href="#about"
-              className="transition-colors hover:text-[#E69A00]"
+              className="nav-link-hover transition-colors hover:text-[#E69A00]"
             >
               About
             </a>
 
             <a
               href="#skills"
-              className="transition-colors hover:text-[#E69A00]"
+              className="nav-link-hover transition-colors hover:text-[#E69A00]"
             >
               Skills
             </a>
 
             <a
               href="#contact"
-              className="transition-colors hover:text-[#E69A00]"
+              className="nav-link-hover transition-colors hover:text-[#E69A00]"
             >
               Contact
             </a>

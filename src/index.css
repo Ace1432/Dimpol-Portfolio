@@ -130,3 +130,82 @@
   font-style: normal;
 }
 
+
+/* ============================= */
+/* SCROLL REVEAL ANIMATION       */
+/* ============================= */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  animation: fadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays for child elements */
+.scroll-reveal.visible.delay-100 { animation-delay: 100ms; }
+.scroll-reveal.visible.delay-200 { animation-delay: 200ms; }
+.scroll-reveal.visible.delay-300 { animation-delay: 300ms; }
+.scroll-reveal.visible.delay-400 { animation-delay: 400ms; }
+.scroll-reveal.visible.delay-500 { animation-delay: 500ms; }
+
+
+/* ============================= */
+/* NAV LINK UNDERLINE HOVER      */
+/* ============================= */
+
+.nav-link-hover {
+  position: relative;
+}
+
+.nav-link-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* ============================= */
+/* ACCESSIBILITY: REDUCED MOTION */
+/* ============================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+

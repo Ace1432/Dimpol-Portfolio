@@ -1,6 +1,9 @@
 import Dimp from "../assets/Dimp.png";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function Hero() {
+  const introRef = useScrollReveal({ threshold: 0.1 });
+
   return (
     <section
       id="hero"
@@ -34,7 +37,7 @@ function Hero() {
               absolute top-20 left-1/2 z-0
               -translate-x-1/2
               scale-x-[1.1] scale-y-[1.6]
-              text-[70px]
+              text-[clamp(50px,15vw,70px)]
               font-semibold
               text-[#b65353]
               roboto-regular
@@ -53,7 +56,9 @@ function Hero() {
             alt="Dimp"
             className="
               absolute left-1/2 top-15 z-10
-              w-[440px]
+              w-[280px]
+              sm:w-[360px]
+              md:w-[440px]
               -translate-x-1/2
               mask-b-from-60%
               mask-b-to-90%
@@ -82,15 +87,19 @@ function Hero() {
           <button
             className="
     absolute
-    top-[314px] left-[66%]
+    top-[280px] left-[62%]
     z-20
     -translate-x-[0%]
     rounded-lg
     bg-[#E69A00]
-    px-2 py-3
-    text-sm
+    px-2 py-2
+    text-xs
     font-bold
     text-[#460000]
+
+    sm:top-[300px]
+    sm:px-3 sm:py-3
+    sm:text-sm
 
     md:top-[365px]
     md:left-[62%]
@@ -101,6 +110,8 @@ function Hero() {
     transition-all duration-300
     hover:bg-[#f2a100]
     hover:shadow-[0_0_30px_0_#ffba66]
+    hover:scale-105
+    active:scale-[0.98]
   "
           >
             Get in Touch
@@ -108,9 +119,12 @@ function Hero() {
 
           {/* Introduction */}
           <div
+            ref={introRef}
             className="
+              scroll-reveal
               absolute
-              top-120
+              top-100
+              sm:top-110
               md:top-80
               left-0
               right-0
@@ -120,20 +134,20 @@ function Hero() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between">
               {/* Intro */}
               <div className="max-w-xl">
-                <p className="text-lg text-[#E69A00]">Hi, I'm</p>
+                <p className="scroll-reveal visible delay-100 text-lg text-[#E69A00]">Hi, I'm</p>
 
-                <h2 className="text-6xl font-bold text-[#f9f3f3] hurricane-regular md:text-[110px]">
+                <h2 className="scroll-reveal visible delay-200 text-5xl sm:text-6xl font-bold text-[#f9f3f3] hurricane-regular md:text-[110px]">
                   Dimple Kay
                 </h2>
 
-                <p className="mt-2 text-3xl text-[#fcb8b8] roboto-regular">
+                <p className="scroll-reveal visible delay-300 mt-2 text-2xl sm:text-3xl text-[#fcb8b8] roboto-regular">
                   Administrative Assistant
                 </p>
               </div>
 
               {/* Description */}
-              <div className="max-w-md">
-                <p className="text-justify text-[18px] leading-relaxed text-[#fcb8b8] marck-script-regular">
+              <div className="max-w-md mt-4 md:mt-0">
+                <p className="scroll-reveal visible delay-400 text-justify text-[16px] sm:text-[18px] leading-relaxed text-[#fcb8b8] marck-script-regular">
                   I provide reliable administrative support through accurate
                   data entry, organized records, document processing, and
                   efficient office operations.
@@ -148,3 +162,4 @@ function Hero() {
 }
 
 export default Hero;
+

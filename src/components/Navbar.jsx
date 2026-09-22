@@ -16,6 +16,7 @@ function Navbar() {
   useEffect(() => {
     let timeout;
 
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -66,7 +67,7 @@ function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="transition-colors hover:text-white"
+                  className="nav-link-hover transition-colors hover:text-white"
                 >
                   {link.name}
                 </a>
@@ -80,14 +81,35 @@ function Navbar() {
             className="z-[60] text-2xl text-white md:hidden"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? "✕" : "☰"}
+            <span
+              className={`
+                inline-block transition-transform duration-300
+                ${isMenuOpen ? "rotate-90" : "rotate-0"}
+              `}
+            >
+              {isMenuOpen ? "✕" : "☰"}
+            </span>
           </button>
         </div>
+
+        {/* Mobile Overlay */}
+        <div
+          className={`
+            fixed inset-0 z-40
+            bg-black/50 backdrop-blur-sm
+            transition-opacity duration-300
+            md:hidden
+            ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+          `}
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        ></div>
 
         {/* Mobile Sidebar */}
         <div
           className={`
             fixed top-0 right-0 h-screen w-64
+            z-50
             bg-[#240000]/70
             backdrop-blur-xl
             border-l border-white/10
@@ -124,4 +146,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;
