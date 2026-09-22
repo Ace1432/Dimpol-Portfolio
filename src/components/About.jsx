@@ -1,4 +1,4 @@
-import Dimpgrad from "../assets/dimpgrad.jpg";
+import Dimpgrad from "../assets/Dimpgrad.jpg";
 import useScrollReveal from "../hooks/useScrollReveal";
 
 function About() {
