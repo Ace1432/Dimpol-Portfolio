@@ -84,7 +84,7 @@ function Hero() {
           ></div>
 
           {/* Get in Touch Button */}
-          <button
+          <a
             className="
     absolute
     top-[280px] left-[62%]
@@ -113,9 +113,10 @@ function Hero() {
     hover:scale-105
     active:scale-[0.98]
   "
+  href="#contact"
           >
             Get in Touch
-          </button>
+          </a>
 
           {/* Introduction */}
           <div

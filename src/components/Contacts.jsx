@@ -29,8 +29,7 @@ function Contacts() {
               Get in Touch
             </h3>
             <p className="mt-3 leading-relaxed text-white/70">
-              I'm open to administrative, data entry, virtual assistant, and web
-              development opportunities.
+              I'm open to administrative, data entry and virtual assistant.
             </p>
             <div className="mt-8 space-y-6">
               {/* Email */}

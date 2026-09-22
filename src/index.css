@@ -62,6 +62,11 @@
   --color-steel-blue-950: #0b1319;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 /* ============================= */
 /* GLOBAL LAYOUT */
